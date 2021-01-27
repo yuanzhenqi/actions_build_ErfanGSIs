@@ -55,8 +55,10 @@ jobs:
        
        - name: Zip GSI  
          run: |
+              sudo apt-get install p7zip
+              sudo apt-get install  p7zip-full
               mkdir final
-              zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
+              7za a -t7z -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
        
        - name: Upload GSI to BitSend
          run: |
